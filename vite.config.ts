@@ -4,5 +4,5 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
-  base: "/kaveen-portfolio",
+  base: "/Fullstack-portfolio-frontend",
 })

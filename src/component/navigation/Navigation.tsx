@@ -177,7 +177,7 @@ function Navigation() {
               {/* Image placeholders - Replace with your actual images */}
               <div className="relative bg-[#2a2a2a] overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center text-white/20 text-xs">
-                  <img src="ps kaveen.png" alt="" />
+                  <img src="/ps kaveen.png" alt="" />
                 </div>
               </div>
               <div className="relative bg-[#252525] overflow-hidden">

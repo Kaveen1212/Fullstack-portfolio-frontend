@@ -50,8 +50,8 @@ const Hero: React.FC = () => {
         <SlidingText />
       </div>
       <div className="relative flex flex-col top-10 items-center z-10">
-        <motion.img 
-            src="hi.png" alt="" 
+        <motion.img
+            src="/hi.png" alt=""
             className="w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] xl:w-[550px] xl:h-[550px] object-contain z-10"
           style={{
             opacity: opacity,

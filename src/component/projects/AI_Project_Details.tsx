@@ -70,7 +70,7 @@ function AI_Projects_Details() {
 
                     {/* Tech Stack Section - Top Left */}
                     <div className="hidden lg:block absolute top-24 left-12 group">
-                        <img src="glass 3.png" alt="Glass" className="w-78 h-auto object-contain mb-2 cursor-pointer transition-transform hover:scale-105" />
+                        <img src="/glass 3.png" alt="Glass" className="w-78 h-auto object-contain mb-2 cursor-pointer transition-transform hover:scale-105" />
                         <p className="text-sm font-semibold uppercase tracking-wide font-['Lamora'] text-left">Tech Stack</p>
 
                         {/* Tech Stack Details - Shows on Hover */}
@@ -87,7 +87,7 @@ function AI_Projects_Details() {
 
                     {/* Key Scenarios Section - Top Right */}
                     <div className="hidden lg:block absolute top-12 right-56 group">
-                        <img src="simulation.png" alt="Graph" className="w-64 h-auto object-contain mb-2 cursor-pointer transition-transform hover:scale-105" />
+                        <img src="/simulation.png" alt="Graph" className="w-64 h-auto object-contain mb-2 cursor-pointer transition-transform hover:scale-105" />
                         <p className="text-sm font-semibold uppercase tracking-wide font-['Lamora'] text-left">Key Scenarios</p>
 
                         {/* Key Scenarios Details - Shows on Hover */}
@@ -104,7 +104,7 @@ function AI_Projects_Details() {
 
                     {/* Core Features Section - Center */}
                     <div className="hidden lg:flex flex-col items-left absolute left-220 top-72 transform -translate-x-1/4 group">
-                            <img src="STROBERY.png" alt="Acronomics Agent" className="max-w-sm w-60 lg:w-full lg:max-w-120 mb-2 cursor-pointer transition-transform hover:scale-105"/>
+                            <img src="/STROBERY.png" alt="Acronomics Agent" className="max-w-sm w-60 lg:w-full lg:max-w-120 mb-2 cursor-pointer transition-transform hover:scale-105"/>
                             <p className="text-sm font-semibold uppercase tracking-wide font-['Lamora'] text-left mb-4">Core Features</p>
 
                             {/* Core Features Details - Shows on Hover */}
@@ -123,7 +123,7 @@ function AI_Projects_Details() {
 
                     {/* How It Works Section - Bottom Left */}
                     <div className="hidden lg:block absolute bottom-30 left-80 group">
-                        <img src="ai_grow 1.png" alt="Tomato" className="w-76 h-auto object-contain mb-2 cursor-pointer transition-transform hover:scale-105" />
+                        <img src="/ai_grow 1.png" alt="Tomato" className="w-76 h-auto object-contain mb-2 cursor-pointer transition-transform hover:scale-105" />
                         <p className="text-sm font-semibold uppercase tracking-wide font-['Lamora'] text-left">How It Works</p>
 
                         {/* How It Works Details - Shows on Hover */}
@@ -139,7 +139,7 @@ function AI_Projects_Details() {
 
                     {/* Soundcore Section - Bottom Right */}
                     <div className="hidden lg:block absolute bottom-36 space-y-10 right-32">
-                        <img src="soundcore.png" alt="Soundcore" className="w-86 h-auto object-contain" />
+                        <img src="/soundcore.png" alt="Soundcore" className="w-86 h-auto object-contain" />
                         <div className="">
                             <svg width="200" height="auto" viewBox="0 0 4679 773" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M392.516 0H1152C1368.5 0 1544.58 173.25 1544.58 386.145C1544.58 599.039 1368.5 772.289 1152.06 772.289H392.58C176.082 772.289 0 599.039 0 386.145C0 173.25 176.082 0 392.516 0ZM741.269 598.524C750.794 608.435 764.888 607.92 777.374 605.346L777.502 605.41C783.294 600.777 775.057 594.92 767.205 589.321C762.443 585.974 757.873 582.757 756.522 579.861C760.898 574.712 747.962 562.806 737.922 553.603C734.488 550.655 731.263 547.472 728.269 544.078C721.19 536.419 718.293 526.83 715.397 517.176C713.467 510.741 711.536 504.305 708.318 498.384C688.753 453.72 666.293 409.378 634.757 371.6C614.485 346.5 591.381 323.975 568.276 301.45C553.257 287.06 538.601 272.296 524.32 257.172C509.775 242.435 501.023 224.286 492.206 206.073C484.869 190.884 477.532 175.631 466.72 162.309C434.091 115.007 331.119 102.071 315.995 169.003C315.995 171.062 315.351 172.349 313.485 173.701C305.119 179.75 297.718 186.572 291.475 194.746C276.158 215.726 273.841 251.187 292.891 270.044L292.955 268.821C293.599 259.361 294.242 250.415 301.901 243.657C316.574 256.078 338.971 260.519 356.025 251.187C376.62 280.148 383.184 315.223 389.813 350.298C395.283 379.645 400.754 408.992 414.398 434.992L415.299 436.408C423.279 449.472 431.388 462.794 441.685 474.186C445.482 479.913 453.141 486.027 460.799 492.141C470.903 500.186 481.008 508.231 481.973 515.246V524.449C481.909 542.791 481.844 561.776 493.815 576.771C500.443 589.965 484.161 603.158 471.161 601.549C463.953 602.514 456.166 600.648 448.378 598.846C437.759 596.272 427.205 593.826 418.645 598.653C416.2 601.227 412.789 601.227 409.313 601.356C405.194 601.485 401.011 601.613 398.566 605.861C398.051 607.084 396.892 608.435 395.67 609.916C392.967 613.133 390.07 616.673 393.546 619.312L394.511 618.668C399.788 614.678 404.808 610.945 411.888 613.262C410.987 618.411 414.398 619.827 417.809 621.178L419.546 621.95C419.474 623.164 419.302 624.369 419.031 625.554C418.452 628.45 417.937 631.218 420.19 633.728C421.244 632.629 422.233 631.468 423.15 630.252C425.531 627.292 427.848 624.332 432.096 623.173C441.363 635.401 450.695 630.317 462.408 624.01C475.666 616.866 491.948 608.049 514.538 620.47C505.85 620.084 498.127 621.114 492.334 628.193C490.854 629.738 489.631 631.54 492.206 633.599C505.528 625.104 511.127 628.129 516.34 631.025C520.201 633.084 523.741 635.079 529.984 632.569L534.489 630.252C544.464 624.911 554.697 619.569 566.603 621.435C557.657 623.945 554.504 629.48 551.028 635.465C549.355 638.49 547.553 641.579 544.979 644.475C543.627 645.827 543.048 647.436 544.528 649.624C563.192 648.144 570.271 643.51 579.796 637.267C584.301 634.307 589.45 630.896 596.594 627.356C604.574 622.53 612.554 625.619 620.277 628.643C628.643 631.861 636.688 634.951 644.154 627.742C646.535 625.619 649.495 625.554 652.456 625.554C653.485 625.554 654.58 625.554 655.674 625.426C653.292 613.198 640.228 613.326 626.841 613.455C611.396 613.648 595.757 613.841 596.272 594.856C610.559 585.267 610.688 568.662 610.817 552.959C610.817 549.098 610.817 545.429 611.138 541.825C621.629 547.617 632.762 552.122 643.832 556.563C654.258 560.746 664.619 564.93 674.337 570.078C684.506 586.168 700.338 607.406 721.447 605.99C721.962 604.316 722.477 602.965 723.12 601.292C724.343 601.549 725.63 601.807 726.917 602.193C732.452 603.48 738.373 604.96 741.269 598.524ZM1155.02 416.457C1167.25 428.427 1183.79 435.121 1201.1 435.121C1218.42 435.121 1234.95 428.427 1247.18 416.457C1253.21 410.6 1258.01 403.598 1261.29 395.861C1264.57 388.125 1266.27 379.811 1266.3 371.407C1266.27 363.003 1264.57 354.689 1261.29 346.952C1258.01 339.216 1253.21 332.214 1247.18 326.357C1238.18 317.571 1226.85 311.545 1214.54 308.991C1202.22 306.436 1189.43 307.46 1177.68 311.941L1140.35 258.459L1114.28 275.965L1151.81 329.703C1141.1 341.812 1135.46 357.573 1136.06 373.724C1136.66 389.874 1143.45 405.175 1155.02 416.457ZM1038.09 243.336C1048.9 248.574 1060.94 250.772 1072.91 249.695C1084.88 248.618 1096.34 244.306 1106.05 237.222C1117.14 229.142 1125.34 217.699 1129.41 204.592C1133.44 191.537 1133.08 177.52 1128.38 164.691C1123.61 151.797 1114.8 140.784 1103.28 133.284C1090.47 124.88 1075.13 121.183 1059.9 122.826C1044.66 124.47 1030.47 131.351 1019.74 142.294C1012.78 149.492 1007.61 158.235 1004.67 167.809C1001.73 177.383 1001.1 187.518 1002.82 197.384C1004.63 207.221 1008.75 216.486 1014.85 224.414C1020.97 232.459 1028.95 238.895 1038.09 243.336ZM1038.09 613.52C1048.91 618.744 1060.94 620.934 1072.91 619.858C1084.88 618.781 1096.33 614.477 1106.05 607.406C1117.14 599.326 1125.34 587.883 1129.41 574.776C1133.44 561.721 1133.08 547.704 1128.38 534.875C1123.61 521.981 1114.8 510.968 1103.28 503.468C1090.47 495.051 1075.13 491.348 1059.9 492.992C1044.66 494.635 1030.46 501.524 1019.74 512.478C1012.77 519.673 1007.61 528.416 1004.67 537.991C1001.72 547.566 1001.09 557.702 1002.82 567.568C1004.63 577.405 1008.75 586.67 1014.85 594.598C1020.97 602.643 1028.95 609.079 1038.09 613.52ZM1097.94 387.239V355.575H998.184C995.658 345.923 990.871 337.011 984.218 329.574L1021.8 275.064L994.451 257.301L956.931 311.812C945.429 307.805 933.042 307.067 921.146 309.68C909.25 312.294 898.312 318.156 889.549 326.614C883.544 332.431 878.765 339.391 875.493 347.084C872.222 354.777 870.523 363.047 870.499 371.407C870.499 388.204 877.385 404.358 889.549 416.2C898.312 424.658 909.25 430.52 921.146 433.133C933.042 435.746 945.429 435.009 956.931 431.002L994.451 485.513L1021.48 467.75L984.218 413.239C990.871 405.803 995.658 396.891 998.184 387.239H1097.94Z" fill="black"/>
@@ -158,7 +158,7 @@ function AI_Projects_Details() {
 
                     {/* Mobile Image - Shows only on mobile */}
                     <div className="flex justify-center items-center mt-6 lg:hidden">
-                        <img src="acronomics.png" alt="Acronomics Agent" className="w-54 max-w-xs"/>
+                        <img src="/acronomics.png" alt="Acronomics Agent" className="w-54 max-w-xs"/>
                     </div>
 
                     {/* Mobile Accordion Sections - Shows only on mobile */}
@@ -284,7 +284,7 @@ function AI_Projects_Details() {
 
                     {/* Tech Stack Section - Top Left */}
                     <div className="hidden lg:block absolute top-24 left-12 group">
-                        <img src="autocare/autocare 3.png" alt="Tech Stack" className="w-78 h-auto object-contain mb-2 cursor-pointer transition-transform hover:scale-105" />
+                        <img src="/autocare/autocare 3.png" alt="Tech Stack" className="w-78 h-auto object-contain mb-2 cursor-pointer transition-transform hover:scale-105" />
                         <p className="text-sm font-semibold uppercase tracking-wide font-['tiempos'] text-left">Tech Stack</p>
 
                         {/* Tech Stack Details - Shows on Hover */}
@@ -338,7 +338,7 @@ function AI_Projects_Details() {
 
                     {/* How It Works Section - Bottom Left */}
                     <div className="hidden lg:block absolute bottom-30 left-80 group">
-                        <img src="autocare/autocare 2.png" alt="Workflow" className="w-76 h-auto object-contain mb-2 cursor-pointer transition-transform hover:scale-105" />
+                        <img src="/autocare/autocare 2.png" alt="Workflow" className="w-76 h-auto object-contain mb-2 cursor-pointer transition-transform hover:scale-105" />
                         <p className="text-sm font-semibold uppercase tracking-wide font-['tiempos'] text-left">How It Works</p>
 
                         {/* How It Works Details - Shows on Hover */}
@@ -355,12 +355,12 @@ function AI_Projects_Details() {
 
                     {/* Logo/Branding Section - Bottom Right */}
                     <div className="hidden lg:block absolute bottom-36 space-y-10 right-32">
-                        <img src="autocare/autocare5.png" alt="AutoCare Logo" className="w-86 h-auto object-contain" />
+                        <img src="/autocare/autocare5.png" alt="AutoCare Logo" className="w-86 h-auto object-contain" />
                     </div>
 
                     {/* Mobile Image - Shows only on mobile */}
                     <div className="flex justify-center items-center mt-6 lg:hidden">
-                        <img src="autocare/stive.png" alt="AutoCare Voice" className="w-54 max-w-xs"/>
+                        <img src="/autocare/stive.png" alt="AutoCare Voice" className="w-54 max-w-xs"/>
                     </div>
 
                     {/* Mobile Accordion Sections - Shows only on mobile */}
@@ -487,7 +487,7 @@ function AI_Projects_Details() {
 
                     {/* Tech Stack Section - Top Left */}
                     <div className="hidden lg:block absolute top-24 left-12 group">
-                        <img src="research/reserch1.png" alt="Tech Stack" className="w-78 h-auto object-contain mb-2 cursor-pointer transition-transform hover:scale-105" />
+                        <img src="/research/reserch1.png" alt="Tech Stack" className="w-78 h-auto object-contain mb-2 cursor-pointer transition-transform hover:scale-105" />
                         <p className="text-sm font-semibold uppercase tracking-wide font-['Lamora'] text-left">Tech Stack</p>
 
                         {/* Tech Stack Details - Shows on Hover */}
@@ -506,7 +506,7 @@ function AI_Projects_Details() {
 
                     {/* Key Scenarios Section - Top Right */}
                     <div className="hidden lg:block absolute top-12 right-56 group">
-                        <img src="research/reserch2.png" alt="Scenarios" className="w-64 h-auto object-contain mb-2 cursor-pointer transition-transform hover:scale-105" />
+                        <img src="/research/reserch2.png" alt="Scenarios" className="w-64 h-auto object-contain mb-2 cursor-pointer transition-transform hover:scale-105" />
                         <p className="text-sm font-semibold uppercase tracking-wide font-['Lamora'] text-left">Key Scenarios</p>
 
                         {/* Key Scenarios Details - Shows on Hover */}
@@ -524,7 +524,7 @@ function AI_Projects_Details() {
 
                     {/* Core Features Section - Center */}
                     <div className="hidden lg:flex flex-col items-left absolute left-220 top-72 transform -translate-x-1/4 group">
-                        <img src="research/RESEARCH AGENT.png" alt="Research Agent" className="max-w-sm w-60 lg:w-full lg:max-w-120 mb-2 cursor-pointer transition-transform hover:scale-105"/>
+                        <img src="/research/RESEARCH AGENT.png" alt="Research Agent" className="max-w-sm w-60 lg:w-full lg:max-w-120 mb-2 cursor-pointer transition-transform hover:scale-105"/>
                         <p className="text-sm font-semibold uppercase tracking-wide font-['Lamora'] text-left mb-4">Core Features</p>
 
                         {/* Core Features Details - Shows on Hover */}
@@ -543,7 +543,7 @@ function AI_Projects_Details() {
 
                     {/* How It Works Section - Bottom Left */}
                     <div className="hidden lg:block absolute bottom-30 left-80 group">
-                        <img src="research/reserch3.png" alt="Workflow" className="w-76 h-auto object-contain mb-2 cursor-pointer transition-transform hover:scale-105" />
+                        <img src="/research/reserch3.png" alt="Workflow" className="w-76 h-auto object-contain mb-2 cursor-pointer transition-transform hover:scale-105" />
                         <p className="text-sm font-semibold uppercase tracking-wide font-['Lamora'] text-left">How It Works</p>
 
                         {/* How It Works Details - Shows on Hover */}
@@ -560,12 +560,12 @@ function AI_Projects_Details() {
 
                     {/* Logo/Branding Section - Bottom Right */}
                     <div className="hidden lg:block absolute bottom-36 space-y-10 right-32">
-                        <img src="research/reserch4.png" alt="Research Agent Logo" className="w-86 h-auto object-contain" />
+                        <img src="/research/reserch4.png" alt="Research Agent Logo" className="w-86 h-auto object-contain" />
                     </div>
 
                     {/* Mobile Image - Shows only on mobile */}
                     <div className="flex justify-center items-center mt-6 lg:hidden">
-                        <img src="research/RESEARCH AGENT.png" alt="Research Agent" className="w-54 max-w-xs"/>
+                        <img src="/research/RESEARCH AGENT.png" alt="Research Agent" className="w-54 max-w-xs"/>
                     </div>
 
                     {/* Mobile Accordion Sections - Shows only on mobile */}

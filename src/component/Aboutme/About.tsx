@@ -29,7 +29,7 @@ const About = () => {
         {/* Image  */}
          <div className="absolute items-center left-125 justify-center w-150 h-full">
         <img
-          src="download.png"
+          src="/download.png"
           alt="Classical sculpture background"
           className="w-full h-full object-cover opacity-90"
         />

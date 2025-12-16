@@ -33,8 +33,9 @@ function ChatBot() {
   ])
   const [inputValue, setInputValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-  const [asciiColor, setAsciiColor] = useState('text-white') // State for ASCII art color
-  const [themeColor, setThemeColor] = useState('#1F9D18') // New state for theme color
+  const [asciiColor, setAsciiColor] = useState('text-white')
+  const [themeColor, setThemeColor] = useState('#1F9D18')
+  const [sessionId, setSessionId] = useState<string>('') // Add session ID state
   const inputRef = useRef<HTMLInputElement>(null)
 
   // Use the custom auto-scroll hook
@@ -43,24 +44,39 @@ function ChatBot() {
     isLoading
   ])
 
-  const generateBotResponse = (userMessage: string): string => {
-    // Simple bot response logic - you can integrate with an AI API later
-    const lowercaseMessage = userMessage.toLowerCase()
+  const generateBotResponse = async (userMessage: string): Promise<string> => {
+    try {
+      const response = await fetch('http://localhost:8000/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'accept': 'application/json'
+        },
+        body: JSON.stringify({
+          message: userMessage,
+          session_id: sessionId || undefined
+        })
+      })
 
-    if (lowercaseMessage.includes('hello') || lowercaseMessage.includes('hi')) {
-      return "Hi! I'm your personal AI assistant.\nI can help you with tasks like answering questions,\nplanning, organizing information, creating content,\nresearching topics, and guiding you step-by-step\nwith anything you're working on.\nJust tell me what you need!"
-    } else if (lowercaseMessage.includes('what can you do')) {
-      return "I can help you with:\n• Answering questions\n• Planning and organizing information\n• Creating content\n• Researching topics\n• Guiding you step-by-step with your projects\n\nWhat would you like help with?"
-    } else if (lowercaseMessage.includes('who are you')) {
-      return "I'm Kaveen Agent, your AI assistant.\nI'm here to help you with various tasks and answer your questions.\nFeel free to ask me anything!"
-    } else if (lowercaseMessage.includes('help')) {
-      return "I'm here to help!\nYou can ask me questions, request information,\nor get assistance with various tasks.\nWhat do you need help with?"
-    } else {
-      return `You said: "${userMessage}"\n\nI'm processing your request.\nThis is a demo chatbot interface.\nYou can integrate this with an AI API like OpenAI, Claude, or any other AI service to generate dynamic responses.`
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+
+      const data = await response.json()
+      
+      // Update session ID if provided
+      if (data.session_id && !sessionId) {
+        setSessionId(data.session_id)
+      }
+
+      return data.content
+    } catch (error) {
+      console.error('Error calling chat API:', error)
+      return "I'm sorry, I encountered an error processing your request. Please try again."
     }
   }
 
-  const handleSend = () => {
+   const handleSend = async () => {
     if (inputValue.trim()) {
       const userMessage = inputValue.trim()
 
@@ -69,12 +85,18 @@ function ChatBot() {
       setInputValue('')
       setIsLoading(true)
 
-      // Simulate bot response delay
-      setTimeout(() => {
-        const botResponse = generateBotResponse(userMessage)
+      try {
+        const botResponse = await generateBotResponse(userMessage)
         setMessages(prev => [...prev, { type: 'bot', text: botResponse }])
+      } catch (error) {
+        console.error('Error:', error)
+        setMessages(prev => [...prev, { 
+          type: 'bot', 
+          text: "I'm sorry, I encountered an error. Please try again." 
+        }])
+      } finally {
         setIsLoading(false)
-      }, 1000)
+      }
     }
   }
 

@@ -90,7 +90,7 @@ function VrReal() {
   }, []);
 
   return (
-    <div className="relative flex w-full h-screen overflow-hidden font-brier">
+    <div className="relative flex w-full h-auto sm:h-auto sm:min-h-screen flex-row items-stretch sm:flex-col overflow-hidden font-brier px-4 pt-10 pb-0 sm:px-6 sm:py-20 lg:h-screen lg:flex-row lg:px-0 lg:py-0 gap-2 sm:gap-16 lg:gap-20 xl:gap-20">
       {/* Background Video */}
       <video
         autoPlay
@@ -103,22 +103,22 @@ function VrReal() {
       </video>
 
       {/* Left Hand */}
-      <div className="flex-1 relative">
+      <div className="relative flex-1 flex flex-col h-full sm:block">
         {/* Image */}
-        <div className="flex flex-col justify-end items-start h-full">
+        <div className="order-2 sm:order-none mt-auto flex w-full flex-col items-start justify-end sm:items-center lg:h-full lg:items-start">
           <img
             src="/code.png"
             alt=""
-            className="max-w-70 md:max-w-110 -ml-20 md:ml-0 left-image"
+            className="left-image w-[240px] sm:w-[280px] md:w-[430px] -ml-4 sm:-ml-8 md:ml-0 "
           />
         </div>
 
         {/* Text */}
-        <div className="absolute bottom-130 md:bottom-1/4 left-0 lg:left-130 xl:left-130 text-right left-text">
-          <h1 className="flex flex-col text-black text-4xl md:text-9xl font-bold leading-none md:leading-normal">
+        <div className="left-text order-1 sm:order-none mt-0 sm:mt-8 flex flex-col items-end text-right sm:items-center sm:text-center md:absolute md:bottom-[20%] md:left-[60%] md:mt-0 md:items-end md:text-right">
+          <h1 className="flex flex-col text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-none text-right sm:text-center md:text-right">
             <MaskText
               method="whole"
-              className="text-4xl lg:text-5xl xl:text-9xl font-bolt font-brier text-left leading-none"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bolt font-brier leading-none text-right sm:text-center md:text-right"
               delay={0.1}
             >
               IN
@@ -127,7 +127,7 @@ function VrReal() {
             <span style={{ fontFamily: "'Mona Sans Variable', sans-serif", }}>
               <MaskText
                 method="whole"
-                className="text-4xl lg:text-5xl xl:text-9xl text-center font-bold leading-none"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold leading-none text-right sm:text-center md:text-right"
                 delay={0.2}
               >
                 CODE
@@ -136,12 +136,13 @@ function VrReal() {
           </h1>
 
           {/* Paragraph */}
-          <div className="max-w-[180px] md:max-w-md mt-0 md:mt-6 text-xl text-black font-medium leading-tight md:leading-normal"
+          <div
+            className="mt-3 max-w-[220px] text-black sm:mt-4 sm:max-w-xs md:max-w-md lg:mt-6 text-[11px] sm:text-sm md:text-lg font-medium leading-tight sm:leading-snug lg:leading-normal text-right sm:text-center md:text-right"
                style={{ fontFamily: "'Mona Sans Variable', sans-serif" }}
           >
             <MaskText
               method="whole"
-              className="text-[11px] lg:text-xl xl:text-xl text-right font-baskerville leading-tight"
+              className="text-[11px] sm:text-sm md:text-base lg:text-lg font-baskerville leading-tight sm:leading-snug text-right sm:text-center md:text-right"
               delay={0.4}
             >
               Models, code, performance stats,
@@ -149,7 +150,7 @@ function VrReal() {
 
             <MaskText
               method="whole"
-              className="text-[11px] lg:text-xl xl:text-xl text-right font-baskerville leading-tight"
+              className="text-[11px] sm:text-sm md:text-base lg:text-lg font-baskerville leading-tight sm:leading-snug text-right sm:text-center md:text-right"
               delay={0.5}
             >
               and what I'm building right now.
@@ -157,7 +158,7 @@ function VrReal() {
           </div>
 
           {/* Button */}
-          <button className="mt-6 md:mt-10 mr-0">
+          <button className="mt-5 sm:mt-6 lg:mt-8 self-end sm:self-center md:self-end">
             <svg className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="49.1791" height="49.1791" rx="10.9287" fill="#D2FF00" />
               <path
@@ -170,22 +171,22 @@ function VrReal() {
       </div>
 
       {/* Right Hand */}
-      <div className="flex-1 relative">
-        <div className="flex flex-col justify-end items-end pr-0 h-full">
+      <div className="relative flex-1 flex flex-col h-full sm:block">
+        <div className="order-2 sm:order-none mt-auto flex w-full flex-col items-end justify-end sm:items-center lg:h-full lg:items-end">
           <img
             src="/duty.png"
             alt=""
-            className="max-w-65 mb-0 md:max-w-100 -mr-25 md:mr-0 right-image"
+            className="right-image w-[220px] sm:w-[280px] md:w-[395px] -mr-4 sm:-mr-8 lg:mr-0"
           />
         </div>
 
         {/* Text */}
-        <div className="absolute right-0 lg:right-1/4 xl:right-1/4 bottom-130 lg:bottom-1/4 xl:bottom-1/4 transform translate-x-0 md:-translate-x-1/2 text-left right-text">
-          <h1 className="flex flex-col text-black text-4xl md:text-9xl font-bold leading-none md:leading-normal">
+        <div className="right-text order-1 sm:order-none mt-0 sm:mt-8 flex flex-col items-start text-left sm:items-center sm:text-center md:absolute md:bottom-[20%] md:right-[60%] md:items-start md:text-left">
+          <h1 className="flex flex-col text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-none text-left sm:text-center md:text-left">
             <MaskText
             direction="rtl"
               method="whole"
-              className="text-4xl lg:text-5xl xl:text-9xl font-bolt text-center font-brier font-bold leading-none"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bolt font-brier font-bold leading-none text-left sm:text-center md:text-left"
               delay={0.1}
             >
               OFF
@@ -195,7 +196,7 @@ function VrReal() {
               <MaskText
                 direction="rtl"
                 method="whole"
-                className="text-4xl lg:text-5xl xl:text-9xl font-bolt text-center font-bold leading-none"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bolt font-bold leading-none text-left sm:text-center md:text-left"
                 delay={0.2}
               >
                 DUTY
@@ -205,13 +206,14 @@ function VrReal() {
           </h1>
 
           {/* Paragraph */}
-          <div className="max-w-[180px] md:max-w-md mt-0 md:mt-6 text-xl text-black font-medium leading-tight md:leading-normal"
+          <div
+            className="mt-3 max-w-[220px] text-black sm:mt-4 sm:max-w-xs md:max-w-sm lg:mt-6 lg:max-w-md text-[11px] sm:text-sm md:text-base lg:text-lg font-medium leading-tight sm:leading-snug lg:leading-normal text-left sm:text-center md:text-left"
                style={{ fontFamily: "'Mona Sans Variable', sans-serif" }}
           >
              <MaskText
               direction="rtl"
               method="whole"
-              className="text-[11px] lg:text-xl xl:text-xl text-left font-mona leading-tight"
+              className="text-[11px] sm:text-sm md:text-base lg:text-lg font-mona leading-tight sm:leading-snug text-left sm:text-center md:text-left"
               delay={0.4}
             >
               Visual stories, design ideas, and
@@ -220,7 +222,7 @@ function VrReal() {
              <MaskText
               direction="rtl"
               method="whole"
-              className="text-[11px] lg:text-xl xl:text-xl text-left  font-mona leading-tight"
+              className="text-[11px] sm:text-sm md:text-base lg:text-lg font-mona leading-tight sm:leading-snug text-left sm:text-center md:text-left"
               delay={0.5}
             >
               moments from the places I explore.
@@ -229,7 +231,7 @@ function VrReal() {
           </div>
 
           {/* Button */}
-          <button className="mt-6 md:mt-10 ml-0">
+          <button className="mt-5 sm:mt-6 lg:mt-8 self-start sm:self-center md:self-start">
             <svg className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="49.1791" height="49.1791" rx="10.9287" fill="#D2FF00" />
               <path

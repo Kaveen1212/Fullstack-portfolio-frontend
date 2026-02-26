@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import MaskText from "../ui/MaskText"
 import Navigation from '../navigation/Navigation';
 import LogoLoop from '../ui/LogoLoop'
@@ -16,145 +17,178 @@ const techLogos = [
 ];
 
 const About = () => {
-  // Responsive gap for mobile screens
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-  const logoGap = isMobile ? 80 : 160;
+  const [logoGap, setLogoGap] = useState(120);
+  const [logoHeight, setLogoHeight] = useState(34);
+
+  useEffect(() => {
+    const updateLogoSizing = () => {
+      if (typeof window === 'undefined') return;
+      const width = window.innerWidth;
+
+      if (width < 640) {
+        setLogoGap(56);
+        setLogoHeight(24);
+        return;
+      }
+
+      if (width < 1024) {
+        setLogoGap(88);
+        setLogoHeight(30);
+        return;
+      }
+
+      if (width < 1440) {
+        setLogoGap(120);
+        setLogoHeight(34);
+        return;
+      }
+
+      setLogoGap(160);
+      setLogoHeight(40);
+    };
+
+    updateLogoSizing();
+    window.addEventListener('resize', updateLogoSizing);
+    return () => window.removeEventListener('resize', updateLogoSizing);
+  }, []);
 
   return (
-     <div
-        className="relative w-full h-screen bg-[#1b1b1b] text-white overflow-hidden flex flex-col items-center justify-center font-mona"
-        style={{ fontFamily: "'Mona Sans Variable', 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif" }}
-     >
+    <div
+      className="relative w-full min-h-screen bg-[#1b1b1b] text-white overflow-hidden font-mona"
+      style={{ fontFamily: "'Mona Sans Variable', 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif" }}
+    >
       <Navigation />
-        {/* Image  */}
-         <div className="absolute items-center left-125 justify-center w-150 h-full">
-        <img
-          src="/download.png"
-          alt="Classical sculpture background"
-          className="w-full h-full object-cover opacity-90"
+
+      {/* Image  */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-y-0 right-0 hidden md:block w-[58vw] max-w-[720px] opacity-80">
+          <img
+            src="/download.png"
+            alt="Classical sculpture background"
+            className="h-full w-full object-cover object-left"
+          />
+        </div>
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-[#1b1b1b]/10 via-transparent to-[#1b1b1b]"
+          aria-hidden="true"
         />
       </div>
 
-        {/* Main topic  */}
-    <div className="z-20 mb-10 lg:mb-12 xl:mb-16 -mt-0 lg:mt-10 xl:mt-10">
-    <MaskText
-      maskColor="#FFF"
-      method="whole"
-      className="text-3xl lg:text-5xl xl:text-6xl font-bold tracking-widest text-center"
-      delay={0.8}
-    >
-      ABOUT ME
-    </MaskText>
-  </div>
-
-    {/* pharagrhaphe 1*/}
-    <div className="px-8 lg:px-15 xl:px-60 text-center items-center z-20 max-w-full mx-auto font-light space-y-5 lg:space-y-12 xl:space-y-12 text-lg lg:text-2xl xl:text-3xl">
-    <div className="text-center z-20 font-extralight text-[14px] lg:text-2xl xl:text-3xl">
-    <MaskText
-      maskColor="#FFF"
-      method="line"
-      className="block text-center"
-      delay={0.2}
-    >
-      Software Engineer - Undergraduate - B.Tech in Software Technology
-    </MaskText>
-    </div>
-
-    {/* Description paragraphs 2*/}
-    <div className="space-y-1 text-[12px] lg:text-2xl xl:text-3xl">
-      <MaskText
-        maskColor="#FFF"
-        method="line"
-        className="block text-center"
-        delay={0.3}
-      >
-        An enthusiastic Software Engineering undergraduate at the University of Vocational Technology,
-      </MaskText>
-
-      <MaskText
-        maskColor="#FFF"
-        method="line"
-        className="block text-center"
-        delay={0.3}
-      >
-        specializing in software development, system optimization, and scalable web applications. Proficient in
-      </MaskText>
-
-      <MaskText
-        maskColor="#FFF"
-        method="line"
-        className="block text-center"
-        delay={0.3}
-      >
-        Java, JavaScript, Python, cloud computing, and database management. Strong problem-solving,
-      </MaskText>
-
-      <MaskText
-        maskColor="#FFF"
-        method="line"
-        className="block text-center"
-        delay={0.3}
-      >
-        analytical, and AI-driven decision-making skills, with excellent teamwork, leadership, and
-      </MaskText>
-
-      <MaskText
-        maskColor="#FFF"
-        method="line"
-        className="block text-center"
-        delay={0.3}
-      >
-        communication abilities.
-      </MaskText>
-    </div>
-
-    {/* Description paragraphs 2*/}
-    <div className="space-y-1 text-[12px] lg:text-2xl xl:text-3xl">
-      <MaskText
-        maskColor="#FFF"
-        method="line"
-        className="block text-center"
-        delay={0.4}
-      >
-        A motivated Software Engineering student skilled in software development, cloud computing, and
-      </MaskText>
-
-      <MaskText
-        maskColor="#FFF"
-        method="line"
-        className="block text-center"
-        delay={0.4}
-      >
-        system optimization. Proficient in Java, JavaScript, Python, and databases, with a passion for AI-driven
-      </MaskText>
-
-      <MaskText
-        maskColor="#FFF"
-        method="line"
-        className="block text-center"
-        delay={0.4}
-      >
-      solutions. Strong in critical thinking, leadership, and collaboration, thriving in fast-paced environments.
-      </MaskText>
-    </div>
-
-
-            {/* Technology Stack Logo Loop */}
-            <div className="w-full mt-20 lg:mt-25 xl:mt-25">
-                <LogoLoop
-                    logos={techLogos}
-                    speed={60}
-                    direction="left"
-                    logoHeight={38}
-                    gap={logoGap}
-
-                    scaleOnHover
-                    fadeOut
-                    fadeOutColor="#1b1b1b"
-                    ariaLabel="Technology stack"
-                />
-            </div>
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col items-center justify-center px-4 sm:px-6 lg:px-10 py-24 sm:py-28 lg:py-32">
+        <div className="mb-6 sm:mb-8 lg:mb-10">
+          <MaskText
+            maskColor="#FFF"
+            method="whole"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-[0.3em] text-center"
+            delay={0.8}
+          >
+            ABOUT ME
+          </MaskText>
         </div>
+
+        <div className="w-full max-w-5xl text-center items-center z-10 font-light space-y-6 sm:space-y-8 lg:space-y-10">
+          <div className="text-center font-extralight text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/90">
+            <MaskText
+              maskColor="#FFF"
+              method="line"
+              className="block text-center"
+              delay={0.2}
+            >
+              Software Engineer - Undergraduate - B.Tech in Software Technology
+            </MaskText>
+          </div>
+
+          <div className="space-y-2 sm:space-y-3 lg:space-y-4 text-[13px] sm:text-sm md:text-base lg:text-lg xl:text-xl text-white/80 leading-relaxed">
+            <MaskText
+              maskColor="#FFF"
+              method="line"
+              className="block text-center"
+              delay={0.3}
+            >
+              An enthusiastic Software Engineering undergraduate at the University of Vocational Technology,
+            </MaskText>
+
+            <MaskText
+              maskColor="#FFF"
+              method="line"
+              className="block text-center"
+              delay={0.3}
+            >
+              specializing in software development, system optimization, and scalable web applications. Proficient in
+            </MaskText>
+
+            <MaskText
+              maskColor="#FFF"
+              method="line"
+              className="block text-center"
+              delay={0.3}
+            >
+              Java, JavaScript, Python, cloud computing, and database management. Strong problem-solving,
+            </MaskText>
+
+            <MaskText
+              maskColor="#FFF"
+              method="line"
+              className="block text-center"
+              delay={0.3}
+            >
+              analytical, and AI-driven decision-making skills, with excellent teamwork, leadership, and
+            </MaskText>
+
+            <MaskText
+              maskColor="#FFF"
+              method="line"
+              className="block text-center"
+              delay={0.3}
+            >
+              communication abilities.
+            </MaskText>
+          </div>
+
+          <div className="space-y-2 sm:space-y-3 lg:space-y-4 text-[13px] sm:text-sm md:text-base lg:text-lg xl:text-xl text-white/80 leading-relaxed">
+            <MaskText
+              maskColor="#FFF"
+              method="line"
+              className="block text-center"
+              delay={0.4}
+            >
+              A motivated Software Engineering student skilled in software development, cloud computing, and
+            </MaskText>
+
+            <MaskText
+              maskColor="#FFF"
+              method="line"
+              className="block text-center"
+              delay={0.4}
+            >
+              system optimization. Proficient in Java, JavaScript, Python, and databases, with a passion for AI-driven
+            </MaskText>
+
+            <MaskText
+              maskColor="#FFF"
+              method="line"
+              className="block text-center"
+              delay={0.4}
+            >
+              solutions. Strong in critical thinking, leadership, and collaboration, thriving in fast-paced environments.
+            </MaskText>
+          </div>
+
+          <div className="w-full mt-10 sm:mt-12 lg:mt-16">
+            <LogoLoop
+              logos={techLogos}
+              speed={60}
+              direction="left"
+              logoHeight={logoHeight}
+              gap={logoGap}
+              scaleOnHover
+              fadeOut
+              fadeOutColor="#1b1b1b"
+              ariaLabel="Technology stack"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

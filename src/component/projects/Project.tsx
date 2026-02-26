@@ -1,10 +1,11 @@
 // Project.tsx
 import React, { useEffect, useState } from 'react';
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Navigation from '../navigation/Navigation';
+import FlowingMenu from './ProjectMenu';
 
 
-const FigmaIcon = ({ fill = "#000" }: { fill?: string }) => (
+const FigmaIcon = ({ fill = "#1b1b1b" }: { fill?: string }) => (
   <svg width="40" height="34" viewBox="0 0 240 234" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clipPath="url(#clip0_5_58)">
       <path d="M95 192C108.807 192 120 180.807 120 167V142H95C81.1929 142 70 153.193 70 167C70 180.807 81.1929 192 95 192Z" fill={fill} />
@@ -15,13 +16,13 @@ const FigmaIcon = ({ fill = "#000" }: { fill?: string }) => (
     </g>
     <defs>
       <clipPath id="clip0_5_58">
-        <rect width="240" height="234" fill="black" />
+        <rect width="240" height="234" fill="#1b1b1b" />
       </clipPath>
     </defs>
   </svg>
 );
 
-const GitIcon = ({ fill = "#000" }: { fill?: string }) => (
+const GitIcon = ({ fill = "#1b1b1b" }: { fill?: string }) => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       fillRule="evenodd"
@@ -86,14 +87,29 @@ const projects: ProjectItem[] = [
     id: 'mystudio-5',
     img: 'uovt.png',
     icon: <GitIcon />,
-    title: 'University E-Commerce Web Application',
+    title: 'E-Commerce Web',
     description: 'Branding, Website, Development',
     detail: 'Developed an online merchandise store for the University of Vocational Technology using Next.js and Tailwind CSS, with Wix BaaS powering the backend. The platform enables users to create accounts, browse a catalog of university-branded products (t-shirts, bangles, and more), and make secure purchases. Focused on responsive design, smooth navigation, and efficient account management, the project delivers a scalable and user-friendly e-commerce experience tailored to the university community.'
   },
 ];
 
 const Project = () => {
-  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+  const [activeProjectId, setActiveProjectId] = useState<string | null>(null);
+
+  const menuItems = projects.map((project) => ({
+    id: project.id,
+    link: '#',
+    text: project.title,
+    image: project.img ?? ''
+  }));
+
+  const focusedProject =
+    activeProjectId ? projects.find((project) => project.id === activeProjectId) ?? null : null;
+
+  const handleProjectClick = (projectId?: string) => {
+    if (!projectId) return;
+    setActiveProjectId((prev) => (prev === projectId ? null : projectId));
+  };
 
   // Load fonts
   useEffect(() => {
@@ -115,146 +131,101 @@ const Project = () => {
 
   return (
         <div
-          className="relative min-h-screen bg-white text-black overflow-auto flex flex-col items-center justify-start pt-20"
+          className="relative min-h-screen bg-white text-[#1b1b1b] overflow-x-hidden overflow-y-auto flex flex-col items-center justify-start pt-20"
           style={{ fontFamily: "'Canela Trial', serif" }}
         >
           <Navigation/>
       {/* Header */}
-      <h1 className="text-3xl lg:text-4xl xl:text-6xl font-light tracking-widest text-black mb-8">
+      <h1 className="text-3xl lg:text-4xl xl:text-6xl font-semibold tracking-widest text-[#1b1b1b] mb-8">
         PROJECTS
       </h1>
 
-      {/* Projects List */}
-      <div className="relative z-10 w-full max-w-6xl px-2 lg:px-4 xl:px-8 mx-5">
-        {projects.map((project, idx) => (
-          <motion.div
-            key={project.id}
-            className={`relative transition-colors duration-300 ${
-              hoveredIdx === idx ? 'bg-black' : 'bg-transparent'
-            }`}
-            onMouseEnter={() => setHoveredIdx(idx)}
-            onMouseLeave={() => setHoveredIdx(null)}
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ amount: 0.2 }}
-            transition={{ type: "spring", stiffness: 60, delay: idx * 0.1 }}
-          >
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between py-6 sm:py-8 gap-2 min-h-[80px]">
-              {/* Icon + Text */}
-              <div className="flex items-center gap-2 sm:gap-4">
-                <span className="text-lg sm:text-2xl">
-                  {/* Change SVG color on hover */}
-                  {React.isValidElement(project.icon)
-                    ? React.cloneElement(project.icon as React.ReactElement<{ fill?: string }>, { fill: hoveredIdx === idx ? '#fff' : '#000' })
-                    : null}
-                </span>
-                <span className={`h-6 sm:h-8 w-px mx-1 sm:mx-2 ${hoveredIdx === idx ? 'bg-[#F8FBF8]' : 'bg-black'}`} />
-                <span className={`text-base sm:text-xl font-normal ${hoveredIdx === idx ? 'text-white' : 'text-black'}`}>{project.title}</span>
-                <span className={`mx-2 sm:mx-4 text-sm sm:text-lg ${hoveredIdx === idx ? 'text-white' : 'text-black'}`}>—</span>
-                <span className={`text-sm sm:text-lg ${hoveredIdx === idx ? 'text-white' : 'text-black'}`}>{project.description}</span>
-              </div>
+      {/* Projects Menu + Details */}
+      <div className="relative z-10 w-full">
+        <div className="relative w-full">
+          <div className="h-[420px] sm:h-[480px] md:h-[520px] lg:h-[600px] overflow-hidden border-y border-[#1b1b1b]/10 shadow-lg">
+            <FlowingMenu
+              items={menuItems}
+              speed={15}
+              textColor="#1b1b1b"
+              bgColor="#ffffff"
+              marqueeBgColor="#1b1b1b"
+              marqueeTextColor="#ffffff"
+              borderColor="#1b1b1b"
+              onItemClick={(item) => handleProjectClick(item.id)}
+            />
+          </div>
+        </div>
 
-              {/* Button */}
-              <button className={`flex items-center gap-1 sm:gap-2 border rounded-md px-2 py-1 sm:px-4 sm:py-2 mr-0 sm:mr-4 text-xs sm:text-sm font-semibold transition ${
-                hoveredIdx === idx
-                  ? 'bg-white text-black border-white'
-                  : 'border-black hover:bg-black hover:text-white'
-              }`}>
-                <span className={`text-xs sm:text-base ${hoveredIdx === idx ? 'text-black' : 'text-black'}`}>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" className="w-4 h-4 sm:w-5 sm:h-5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 8V6a4 4 0 118 0v2m-9 4h10a1 1 0 011 1v5a1 1 0 01-1 1H5a1 1 0 01-1-1v-5a1 1 0 011-1zm5 3v2" />
-                  </svg>
-                </span>
-                CONTACT FOR DETAILS
-              </button>
-            </div>
-
-            {/* Divider */}
-            {idx < projects.length - 1 && (
-              <hr className={`border-t ${hoveredIdx === idx ? 'border-white' : 'border-black'}`} />
-            )}
-
-            {/* Hover Overlay */}
-            {hoveredIdx === idx && (
-              <div className="absolute mx-5 left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/4 w-[100vw] max-w-xs h-auto border-2 border-black bg-white text-black shadow-2xl flex flex-col items-center justify-center z-50 transition-all duration-300">
-                {project.img && (
-                  <img src={project.img} alt={project.title} className="w-full h-1/2 object-cover mb-2 rounded" />
+        <div className="relative lg:absolute lg:right-6 lg:top-1/2 lg:-translate-y-1/2 w-full px-4 sm:px-6 lg:px-0 mt-4 sm:mt-6 lg:mt-0">
+          <AnimatePresence>
+            {focusedProject && (
+              <motion.div
+                key={focusedProject.id}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -24 }}
+                transition={{ type: "spring", stiffness: 140, damping: 18 }}
+                className="relative border-2 border-white bg-[#1b1b1b] text-white shadow-2xl p-3 sm:p-4 max-w-[360px] lg:max-w-[300px] ml-0 sm:ml-auto"
+              >
+                <button
+                  type="button"
+                  aria-label="Close project details"
+                  className="absolute right-2 top-2 inline-flex items-center justify-center rounded-full border border-white/70 w-6 h-6 text-[10px] font-semibold transition hover:bg-white hover:text-[#1b1b1b]"
+                  onClick={() => setActiveProjectId(null)}
+                >
+                  ✕
+                </button>
+                {focusedProject.img && (
+                  <img
+                    src={focusedProject.img}
+                    alt={focusedProject.title}
+                    className="w-full h-32 sm:h-36 object-cover rounded mb-2"
+                  />
                 )}
-                <h2 className="text-lg font-bold mb-1 text-black">{project.title}</h2>
-                <p className="text-sm mx-5 text-black mb-5">{project.detail}</p>
-              </div>
+                <div className="flex items-center gap-2 mb-2 pr-7">
+                  <span className="text-base">
+                    {React.isValidElement(focusedProject.icon)
+                      ? React.cloneElement(
+                          focusedProject.icon as React.ReactElement<{ fill?: string }>,
+                          { fill: '#fff' }
+                        )
+                      : null}
+                  </span>
+                  <h2 className="text-base sm:text-lg lg:text-xl font-light tracking-wide">{focusedProject.title}</h2>
+                </div>
+                <p className="text-[11px] sm:text-xs lg:text-sm uppercase tracking-[0.2em] text-white/70 mb-2">
+                  {focusedProject.description}
+                </p>
+                <p className="text-[12px] sm:text-sm lg:text-base leading-relaxed text-white/80">
+                  {focusedProject.detail}
+                </p>
+                <button
+                  className="mt-3 inline-flex items-center gap-2 border border-white rounded-md px-2 py-1.5 text-[10px] sm:text-[11px] lg:text-xs font-semibold transition hover:bg-white hover:text-[#1b1b1b]"
+                  type="button"
+                >
+                  <span className="text-[11px] sm:text-[12px]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 20 20"
+                      className="w-3.5 h-3.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 8V6a4 4 0 118 0v2m-9 4h10a1 1 0 011 1v5a1 1 0 01-1 1H5a1 1 0 01-1-1v-5a1 1 0 011-1zm5 3v2"
+                      />
+                    </svg>
+                  </span>
+                  CONTACT FOR DETAILS
+                </button>
+              </motion.div>
             )}
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Left side box */}
-      <div className="absolute left-12 top-1/2 -translate-y-1/2 flex-col items-center z-10 hidden lg:flex">
-        <div className="border border-black flex flex-col">
-          <div className="border-b border-black p-20 flex items-center justify-center">
-            <div className="custom-star-container animate-star-float">
-              {/* ...SVG remains unchanged... */}
-               <svg className="custom-star" viewBox="0 0 80 80" width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <polygon
-                  points="40,5 48,30 75,30 52,45 60,70 40,55 20,70 28,45 5,30 32,30"
-                  fill="#000"
-                />
-              </svg>
-
-            </div>
-          </div>
-
-          <div className="h-[5px]" />
-
-          <div className="border-t border-black p-8 h-145 w-50 flex items-center justify-center relative">
-            <div className="-rotate-90 origin-center whitespace-nowrap flex items-center">
-              <span className="text-9xl font-light tracking-wider text-black">React.js</span>
-            </div>
-            <div className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90">
-              <div className="border border-black rounded-full px-4 py-1">
-                <span className="text-xl tracking-wider text-black">KAVEEN</span>
-              </div>
-            </div>
-          </div>
+          </AnimatePresence>
         </div>
-      </div>
-
-      {/* Right side box */}
-      <div className="absolute right-12 top-1/2 -translate-y-1/2 flex-col items-center z-10 hidden lg:flex">
-        <div className="border border-black flex flex-col">
-          <div className="border-b border-black p-8 h-145 w-50 flex items-center justify-center relative">
-            <div className="rotate-90 origin-center whitespace-nowrap flex items-center justify-center">
-              <span className="text-9xl font-light tracking-wider text-black">Node.js</span>
-            </div>
-            <div className="absolute right-0 top-1/2 translate-x-full -translate-y-1/2 rotate-90">
-              <div className="border border-black rounded-full px-4 py-1">
-                <span className="text-xl tracking-wider text-black">KAVEEN</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="h-[5px]" />
-
-          <div className="border-t border-black p-20 flex items-center justify-center">
-            <div className="circle">
-              <div className="wave" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Corner frames */}
-      <div className="absolute top-8 left-8 z-10 hidden md:block">
-        <div className="border-t border-l border-black w-32 h-32" />
-      </div>
-      <div className="absolute top-8 right-8 z-10 hidden md:block">
-        <div className="border-t border-r border-black w-32 h-32" />
-      </div>
-      <div className="absolute bottom-8 left-8 z-10 hidden md:block">
-        <div className="border-b border-l border-black w-32 h-32" />
-      </div>
-      <div className="absolute bottom-8 right-8 z-10 hidden md:block">
-        <div className="border-b border-r border-black w-32 h-32" />
       </div>
 
       {/* Inline CSS */}
@@ -279,7 +250,7 @@ const Project = () => {
           width: 100px;
           height: 100px;
           background: #fff;
-          border: 2px solid #000;
+          border: 2px solid #1b1b1b;
           border-radius: 50%;
           overflow: hidden;
         }
@@ -301,12 +272,12 @@ const Project = () => {
         }
         .wave:before {
           border-radius: 45%;
-          background: rgba(0, 0, 0, 1);
+          background: rgba(27, 27, 27, 1);
           animation: animate 5s linear infinite;
         }
         .wave:after {
           border-radius: 40%;
-          background: rgba(0, 0, 0, 0.5);
+          background: rgba(27, 27, 27, 0.5);
           animation: animate 10s linear infinite;
         }
         @keyframes animate {

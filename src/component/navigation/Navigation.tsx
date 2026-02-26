@@ -111,13 +111,13 @@ function Navigation() {
             {/* Menu Button - Both Desktop & Mobile */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="w-12 lg:w-14 h-12 lg:h-14 flex items-center group duration-300 animate-fadeInRight cursor-pointer hover:bg-[#00A67D] hover:rounded-lg pointer-events-auto"
+              className="inline-flex items-center justify-center group duration-300 animate-fadeInRight cursor-pointer hover:bg-[#00A67D] hover:rounded-lg pointer-events-auto p-0 bg-transparent border-0"
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isOpen}
               aria-controls="menu-panel"
             >
               {!isOpen ? (
-                <svg width="584" height="584" viewBox="0 0 584 584" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-all duration-300">
+                <svg viewBox="0 0 584 584" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-all duration-300 w-12 h-12 lg:w-14 lg:h-14 block">
                     <g clipPath="url(#clip0_345_594)">
                     <rect x="17.5" y="17.5" width="549" height="549" rx="42.5" stroke="#00A67D" strokeWidth="35" className="transition-all duration-300 group-hover:stroke-[#e9ff32]"/>
                     <path d="M244.5 226H501.5" stroke="#00A67D" strokeWidth="35" className="transition-all duration-300 group-hover:stroke-[#e9ff32]"/>
@@ -130,7 +130,7 @@ function Navigation() {
                     </defs>
                 </svg>
               ) : (
-                <div className="relative w-14 h-14 flex items-center hover:bg-black justify-center">
+                <div className="relative w-12 h-12 lg:w-14 lg:h-14 flex items-center hover:bg-black justify-center">
                   <span className="absolute w-8 h-0.5 bg-[#00A67D]  transform rotate-45 transition-all duration-300" />
                   <span className="absolute w-8 h-0.5 bg-[#00A67D] transform -rotate-45 transition-all duration-300" />
                 </div>

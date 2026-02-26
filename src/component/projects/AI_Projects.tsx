@@ -18,12 +18,12 @@ function AI_Projects() {
       <img
         src="/right hand.png"
         alt=""
-        className="pointer-events-none select-none absolute top-0 right-9 w-76 lg:w-86 xl:w-100 2xl:w-120 opacity-90 z-0 translate-x-8 transform"
+        className="pointer-events-none select-none absolute top-0 right-9 w-76 sm:w-46 md:w-100 opacity-90 z-0 translate-x-8 transform"
       />
       <img
         src="/left hand.png"
         alt=""
-        className="pointer-events-none select-none absolute bottom-0 left-10 w-76 lg:w-86 xl:w-100 2xl:w-150 0 opacity-90 z-0 -translate-x-8 translate-y-8"
+        className="pointer-events-none select-none absolute bottom-0 left-10 w-76 sm:w-46 md:w-110 opacity-90 z-0 -translate-x-8 translate-y-8"
       />
     </div>
   )

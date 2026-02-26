@@ -10,7 +10,7 @@ function Black() {
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ amount: 0.5 }}
-      className="w-full relative my-10"
+      className="w-full relative my-6 md:my-8 xl:my-10"
       style={{ overflow: "visible" }}
       transition={{
         y: { type: "spring", stiffness: 30, damping: 14, mass: 0.9, velocity: 0 },
@@ -24,7 +24,7 @@ function Black() {
 
   return (
     <div
-      className="w-full h-screen bg-[#1b1b1b]"
+      className="w-full h-auto md:h-screen bg-[#1b1b1b] py-10"
       style={{
         position: "sticky",
         top: 0,
@@ -35,25 +35,25 @@ function Black() {
     >
       <Navigation/>
       {/* Mobile Layout */}
-      <div className="flex flex-col h-full xl:hidden px-5 py-2">
+      <div className="flex flex-col h-full xl:hidden px-5 md:px-10 lg:px-14 py-6 md:py-10 gap-6 md:gap-10">
         <div>
-          <h1 className="uppercase text-white text-3xl font-light">
+          <h1 className="uppercase text-white text-3xl md:text-4xl lg:text-5xl font-light">
             <AnimatedBlock idx={0}>
-              <span className="text-white text-3xl font-medium">Product engineering </span>
+              <span className="text-white text-3xl md:text-4xl lg:text-5xl font-medium">Product engineering </span>
             </AnimatedBlock>
           </h1>
         </div>
 
-        <div className="flex flex-col justify-end -mt-10">
-          <div className="space-y-5">
+        <div className="flex flex-col justify-end mt-2 md:mt-6">
+          <div className="space-y-5 md:space-y-8">
             <AnimatedBlock idx={1}>
-              <p className="text-white text-m leading-relaxed line-space-5">
+              <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed line-space-5">
                 Kaveen Deshapriya (he/him) is a globe-trotting product and digital experience designer with a passion for blending technology, functionality, and aesthetics. Rooted in Sri Lanka and active globally, he fuses low-code platforms and savvy prototyping tools to shape elegant, user-centered products.
               </p>
             </AnimatedBlock>
 
             <AnimatedBlock idx={2}>
-              <p className="text-white text-m leading-relaxed line-space-5">
+              <p className="text-white text-base md:text-lg lg:text-xl leading-relaxed line-space-5">
                 Having trained in <Highlighter action="underline" 
                 color="#FF9800" 
                 strokeWidth={2}
@@ -72,18 +72,18 @@ function Black() {
       </div>
 
       {/* Desktop Layout */}
-      <div className="hidden xl:flex flex-row items-center h-full">
-        <div className="basis-1/3 flex items-center justify-start ml-16 mt-10">
-          <h1 className="flex items-center justify-center uppercase text-white text-5xl font-light">
+      <div className="hidden xl:flex flex-row items-center h-full px-16 2xl:px-24 gap-12">
+        <div className="basis-1/3 flex items-center justify-start">
+          <h1 className="flex items-center justify-center uppercase text-white text-5xl 2xl:text-6xl font-light">
             <AnimatedBlock idx={3}>
-              <span className="text-white text-5xl font-medium">Product designing</span>
+              <span className="text-white text-5xl 2xl:text-6xl font-medium">Product designing</span>
             </AnimatedBlock>
           </h1>
         </div>
 
-        <div className="basis-2/3 flex flex-col justify-end mr-16 ml-10 max-w-full">
+        <div className="basis-2/3 flex flex-col justify-end max-w-full gap-8">
           <AnimatedBlock idx={4}>
-            <p className="text-white text-3xl">
+            <p className="text-white text-2xl 2xl:text-3xl leading-relaxed">
               Kaveen Deshapriya (he/him) is aglobe-trotting product and 
               digital experience designer with a passion for blending 
               technology, functionality, and aesthetics Rooted in {" "}
@@ -93,7 +93,7 @@ function Black() {
           </AnimatedBlock>
 
           <AnimatedBlock idx={5}>
-            <p className="text-white text-3xl">
+            <p className="text-white text-2xl 2xl:text-3xl leading-relaxed">
               Having trained in software technology at the{" "}
               <Highlighter action="underline" color="#FF9800" strokeWidth={2} animationDuration={800} iterations={1}> University </Highlighter> <Highlighter action="underline" color="#FF9800" strokeWidth={2} animationDuration={800} iterations={1}> of</Highlighter> <Highlighter action="underline" color="#FF9800" strokeWidth={2} animationDuration={800} iterations={1}>Vocational</Highlighter> <Highlighter action="underline" color="#FF9800" strokeWidth={2} animationDuration={800} iterations={1}>Technology</Highlighter> in Colombo, Kaveen brings a 
               strong technical foundation, while his hands-on experience at {" "}

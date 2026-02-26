@@ -100,7 +100,7 @@ export default function ContactMe() {
               <BlurText
                 text="CONTACT ME"
                 delay={150}
-                className="text-3xl md:text-9xl font-bold tracking-tight"
+                className="text-2xl md:text-9xl font-bold tracking-tight"
                 inView={isInView} // <-- pass inView state
               />
             </div>

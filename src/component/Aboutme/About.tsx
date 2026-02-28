@@ -74,20 +74,20 @@ const About = () => {
         />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col items-center justify-center px-4 sm:px-6 lg:px-10 py-24 sm:py-28 lg:py-32">
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl flex-col items-center justify-center px-4 sm:px-6 lg:px-10 py-24 sm:py-28 lg:py-32">
         <div className="mb-6 sm:mb-8 lg:mb-10">
           <MaskText
             maskColor="#FFF"
             method="whole"
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-[0.3em] text-center"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-[0.1em] text-center"
             delay={0.8}
           >
             ABOUT ME
           </MaskText>
         </div>
 
-        <div className="w-full max-w-5xl text-center items-center z-10 font-light space-y-6 sm:space-y-8 lg:space-y-10">
-          <div className="text-center font-extralight text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/90">
+        <div className="w-full max-w-5xl text-left items-left z-10 font-light space-y-0">
+          <div className="text-left font-bold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/90">
             <MaskText
               maskColor="#FFF"
               method="line"
@@ -98,7 +98,7 @@ const About = () => {
             </MaskText>
           </div>
 
-          <div className="space-y-2 sm:space-y-3 lg:space-y-4 text-[13px] sm:text-sm md:text-base lg:text-lg xl:text-xl text-white/80 leading-relaxed">
+          <div className="space-y-1 sm:space-y-1 lg:space-y-2 text-[13px] sm:text-sm md:text-base lg:text-lg xl:text-xl text-white/80 leading-relaxed">
             <MaskText
               maskColor="#FFF"
               method="line"
@@ -145,7 +145,7 @@ const About = () => {
             </MaskText>
           </div>
 
-          <div className="space-y-2 sm:space-y-3 lg:space-y-4 text-[13px] sm:text-sm md:text-base lg:text-lg xl:text-xl text-white/80 leading-relaxed">
+          <div className="space-y-1 sm:space-y-1 lg:space-y-2 text-[13px] sm:text-sm md:text-base lg:text-lg xl:text-xl text-white/80 leading-relaxed">
             <MaskText
               maskColor="#FFF"
               method="line"

@@ -101,7 +101,7 @@ const ContactInput: React.FC = () => {
     <div className="min-h-screen bg-white text-black flex flex-col">
       <Navigation/>
       {/* Top Section: Responsive height */}
-      <div className="flex flex-col md:flex-row relative min-h-[60vh] md:min-h-[66vh] pt-6 sm:pt-8 md:pt-0">
+      <div className="flex flex-col md:flex-row relative min-h-[60vh] md:min-h-[66vh] pt-6 sm:pt-8 md:pt-0 overflow-x-hidden">
         {/* Rolling Circle on the line - Desktop */}
         <div
           className="hidden md:block absolute left-[47%] md:left-[36%] top-[35%] w-[100px] h-[2px] pointer-events-none z-50 origin-left [transform:rotate(34deg)_translateY(-50%)]"

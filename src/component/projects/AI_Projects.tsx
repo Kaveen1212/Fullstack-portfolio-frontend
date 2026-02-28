@@ -3,7 +3,7 @@ import { Particles } from "../ui/ParticlesDemo"
 function AI_Projects() {
 
   return (
-    <div className='w-full h-screen flex items-center justify-center bg-[#1b1b1b] text-[#F8FBF8]'
+    <div className='w-full h-screen flex items-center justify-center bg-[#1b1b1b] text-[#F8FBF8] overflow-x-hidden'
           style={{ fontFamily: "'Bodoni Moda', serif" }}
     >
       <Particles

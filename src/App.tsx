@@ -26,7 +26,7 @@ function HomePage() {
         <Hero />
       </section>
 
-      <div className="fixed bottom-5 left-5 lg:bottom-8 lg:left-10 z-[9999]">
+      <div className="fixed bottom-0 left-8 lg:bottom-2 lg:left-15 z-[9999]">
         <ChatBotIcon/>
       </div>
 

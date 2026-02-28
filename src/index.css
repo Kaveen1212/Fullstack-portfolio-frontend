@@ -42,6 +42,16 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+::selection {
+  background: #D4A27F;
+  color: #1b1b1b;
+}
+
+::-moz-selection {
+  background: #D4A27F;
+  color: #1b1b1b;
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -114,6 +124,10 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+  }
+  html, body, #root {
+    width: 100%;
+    overflow-x: hidden;
   }
   body {
     @apply bg-background text-foreground;

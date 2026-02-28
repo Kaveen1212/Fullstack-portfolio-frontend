@@ -40,16 +40,18 @@ type ProjectItem = {
   title: string;
   description: string;
   detail?: string;
+  link?: string;
 };
 
 const projects: ProjectItem[] = [
   {
     id: 'barrett',
-    img: 'rama.png',
+    img: 'zeven.png',
     icon: <FigmaIcon />,
-    title: 'RAMADBK',
-    description: 'Branding, Website',
-    detail: 'Crafted a modern, user-focused UI/UX for RAMA DBK’s car export platform, integrating product engineering principles inspired by Marty Cagan. Through continuous discovery and usability testing, I simplified the browsing and purchasing journey, ensuring value, usability, and feasibility. The design features an engaging car gallery, clear CTAs, and optimized filters, balancing customer satisfaction with business goals. Using Figma for prototyping, I aligned user needs with technical and business viability, delivering a seamless, scalable digital experience.'
+    title: 'ZEVEN',
+    description: 'Marketing Website',
+    detail: 'Designed and developed a full marketing website for ZEVEN, a marketing and software company dedicated to building intelligent digital solutions that help businesses grow, scale, and lead in a rapidly evolving digital world. The site communicates ZEVEN\'s dual expertise in innovative technology and impactful digital marketing — positioning them as a globally trusted partner for excellence and innovation. Built in React with Tailwind CSS, the design features a bold dark-mode aesthetic with neon green pixel typography, cinematic visuals including a black hole render and cosmic imagery, barcode-style project cards, a radar UI element, and immersive sections spanning About, Project Plans, Business Expansion, Team, Project Showcase, and Contact — all crafted to reflect ZEVEN\'s identity as a forward-thinking, results-driven digital powerhouse.',
+    link: 'https://magnificent-froyo-0af59b.netlify.app/',
   },
   {
     id: 'mystudio-1',
@@ -57,7 +59,8 @@ const projects: ProjectItem[] = [
     icon: <FigmaIcon />,
     title: 'ABSLOX Military',
     description: 'Gavenment, Website, Art Direction',
-    detail:'I designed the modern UI/UX and product engineering for ABSOLX — an agentic defense intelligence platform — focusing on a high-contrast, mission-oriented visual system and a conversational agent interface that reduces cognitive load for operators. Using Figma prototypes and iterative usability testing, I refined workflows to prioritize speed, clarity, and accessibility while enabling secure, modular integrations for real-time intelligence. The result is a polished digital experience that supports rapid decision-making and scalable deployment across devices.'
+    detail:'I designed the modern UI/UX and product engineering for ABSOLX — an agentic defense intelligence platform — focusing on a high-contrast, mission-oriented visual system and a conversational agent interface that reduces cognitive load for operators. Using Figma prototypes and iterative usability testing, I refined workflows to prioritize speed, clarity, and accessibility while enabling secure, modular integrations for real-time intelligence. The result is a polished digital experience that supports rapid decision-making and scalable deployment across devices.',
+    link: 'https://www.figma.com/design/EMPBm6SbyD2P98HzCecosK/Absolx-militury?node-id=0-1&t=IK26w4y65TomyZ4s-1',
   },
   {
     id: 'mystudio-2',
@@ -65,7 +68,8 @@ const projects: ProjectItem[] = [
     icon: <FigmaIcon />,
     title: 'Rise Management',
     description: 'Company Mobile App, Product Engineering',
-    detail:'Crafted a modern, user-focused UI/UX and led product engineering for RISE Management — a unified operations platform that fully manages Kitchen, HR, Cattle Hut, Housekeeping, MEP, Food Store, Oil Extraction, and the RISE Bot. Through in-depth UX research and iterative usability testing, I simplified complex operational workflows into clear task flows and dashboard views to support fast, error-resistant decision-making across devices. The design features modular domain-specific interfaces, real-time data visualizations, contextual automation, and clear CTAs that reduce manual overhead. Using Figma prototypes and engineering-ready specs, I prioritized accessibility, scalability, and secure integrations to deliver a polished operational experience aligned with both user needs and business goals.'
+    detail:'Crafted a modern, user-focused UI/UX and led product engineering for RISE Management — a unified operations platform that fully manages Kitchen, HR, Cattle Hut, Housekeeping, MEP, Food Store, Oil Extraction, and the RISE Bot. Through in-depth UX research and iterative usability testing, I simplified complex operational workflows into clear task flows and dashboard views to support fast, error-resistant decision-making across devices. The design features modular domain-specific interfaces, real-time data visualizations, contextual automation, and clear CTAs that reduce manual overhead. Using Figma prototypes and engineering-ready specs, I prioritized accessibility, scalability, and secure integrations to deliver a polished operational experience aligned with both user needs and business goals.',
+    link: 'https://www.figma.com/design/DYqPB4NR1Au0ZdQ1UhGhvv/THE-RISE-MANAGEMENT-APP?node-id=0-1&t=1gtiqEuz3yDzGAPo-1',
   },
   {
     id: 'mystudio-3',
@@ -73,7 +77,8 @@ const projects: ProjectItem[] = [
     icon: <FigmaIcon />,
     title: 'Luina E-commerce',
     description: 'Branding, Website, Art Direction',
-    detail:'Designed a modern, customer-centric UI for Luina’s e-commerce platform, focusing on intuitive navigation, engaging product displays, and seamless checkout flow. Through UX research and prototyping in Figma, I optimized filters, CTAs, and mobile responsiveness to enhance usability and accessibility. The design balances visual appeal with business goals, ensuring a smooth shopping journey that increases customer satisfaction and conversion rates.'
+    detail:'Designed a modern, customer-centric UI for Luina’s e-commerce platform, focusing on intuitive navigation, engaging product displays, and seamless checkout flow. Through UX research and prototyping in Figma, I optimized filters, CTAs, and mobile responsiveness to enhance usability and accessibility. The design balances visual appeal with business goals, ensuring a smooth shopping journey that increases customer satisfaction and conversion rates.',
+    link: 'https://www.figma.com/design/6UMf4LT2K6xvDhbhAkCB8i/Luina?node-id=0-1&t=by9Dki0nOgCgW3y6-1',
   },
   {
     id: 'mystudio-4',
@@ -81,24 +86,40 @@ const projects: ProjectItem[] = [
     icon: <GitIcon />,
     title: 'RamaDBK',
     description: 'Branding, Website, Development',
-    detail:'Developed the RAMA DBK car export platform using React and Tailwind CSS, ensuring a responsive and high-performance front end. Integrated GSAP animations to deliver smooth, engaging transitions that elevate the browsing experience. Focused on clean code architecture, component reusability, and optimized rendering to support scalability and maintainability. The development aligned closely with the UI/UX vision, transforming design prototypes into a polished, interactive, and user-friendly web application.'
+    detail:'Developed the RAMA DBK car export platform using React and Tailwind CSS, ensuring a responsive and high-performance front end. Integrated GSAP animations to deliver smooth, engaging transitions that elevate the browsing experience. Focused on clean code architecture, component reusability, and optimized rendering to support scalability and maintainability. The development aligned closely with the UI/UX vision, transforming design prototypes into a polished, interactive, and user-friendly web application.',
+    link: 'https://magnificent-froyo-0af59b.netlify.app/',
   },
   {
     id: 'mystudio-5',
-    img: 'uovt.png',
+    img: 'uovt.gif',
     icon: <GitIcon />,
     title: 'E-Commerce Web',
     description: 'Branding, Website, Development',
-    detail: 'Developed an online merchandise store for the University of Vocational Technology using Next.js and Tailwind CSS, with Wix BaaS powering the backend. The platform enables users to create accounts, browse a catalog of university-branded products (t-shirts, bangles, and more), and make secure purchases. Focused on responsive design, smooth navigation, and efficient account management, the project delivers a scalable and user-friendly e-commerce experience tailored to the university community.'
+    detail: 'Developed an online merchandise store for the University of Vocational Technology using Next.js and Tailwind CSS, with Wix BaaS powering the backend. The platform enables users to create accounts, browse a catalog of university-branded products (t-shirts, bangles, and more), and make secure purchases. Focused on responsive design, smooth navigation, and efficient account management, the project delivers a scalable and user-friendly e-commerce experience tailored to the university community.',
+    link: 'https://splendorous-dragon-b27352.netlify.app/',
   },
+  
 ];
+
+const ITEMS_PER_PAGE = 6;
 
 const Project = () => {
   const [activeProjectId, setActiveProjectId] = useState<string | null>(null);
+  const [pageIndex, setPageIndex] = useState(0);
 
-  const menuItems = projects.map((project) => ({
+  const totalPages = Math.max(1, Math.ceil(projects.length / ITEMS_PER_PAGE));
+  const startIndex = pageIndex * ITEMS_PER_PAGE;
+  const visibleProjects = projects.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  const canGoPrev = pageIndex > 0;
+  const canGoNext = pageIndex < totalPages - 1;
+
+  const handlePrevPage = () => setPageIndex((prev) => Math.max(0, prev - 1));
+  const handleNextPage = () => setPageIndex((prev) => Math.min(totalPages - 1, prev + 1));
+
+  const menuItems = visibleProjects.map((project) => ({
     id: project.id,
-    link: '#',
+    link: project.link ?? '#',
     text: project.title,
     image: project.img ?? ''
   }));
@@ -110,6 +131,16 @@ const Project = () => {
     if (!projectId) return;
     setActiveProjectId((prev) => (prev === projectId ? null : projectId));
   };
+
+  useEffect(() => {
+    setPageIndex((prev) => Math.min(prev, totalPages - 1));
+  }, [totalPages]);
+
+  useEffect(() => {
+    if (!activeProjectId) return;
+    const isVisible = visibleProjects.some((project) => project.id === activeProjectId);
+    if (!isVisible) setActiveProjectId(null);
+  }, [activeProjectId, visibleProjects]);
 
   // Load fonts
   useEffect(() => {
@@ -129,6 +160,39 @@ const Project = () => {
     };
   }, []);
 
+  const contactLink = focusedProject?.link?.trim() ?? '';
+  const hasContactLink = contactLink.length > 0;
+  const contactButtonClasses =
+    'mt-3 inline-flex items-center gap-2 border border-white rounded-md px-2 py-1.5 text-[10px] sm:text-[11px] lg:text-xs font-semibold transition hover:bg-white hover:text-[#1b1b1b]';
+  const contactButtonContent = (
+    <>
+      <span className="text-[11px] sm:text-[12px]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 20 20"
+          className="w-3.5 h-3.5"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M6 8V6a4 4 0 118 0v2m-9 4h10a1 1 0 011 1v5a1 1 0 01-1 1H5a1 1 0 01-1-1v-5a1 1 0 011-1zm5 3v2"
+          />
+        </svg>
+      </span>
+      CONTACT FOR DETAILS
+    </>
+  );
+
+  const pagerButtonBase =
+    'inline-flex items-center gap-2 border border-[#1b1b1b] px-3 py-1 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-semibold transition';
+  const pagerButtonEnabled = 'hover:bg-[#1b1b1b] hover:text-white';
+  const pagerButtonDisabled = 'opacity-40 cursor-not-allowed';
+  const pagerButtonClasses = (enabled: boolean) =>
+    `${pagerButtonBase} ${enabled ? pagerButtonEnabled : pagerButtonDisabled}`;
+
   return (
         <div
           className="relative min-h-screen bg-white text-[#1b1b1b] overflow-x-hidden overflow-y-auto flex flex-col items-center justify-start pt-20"
@@ -136,9 +200,54 @@ const Project = () => {
         >
           <Navigation/>
       {/* Header */}
-      <h1 className="text-3xl lg:text-4xl xl:text-6xl font-semibold tracking-widest text-[#1b1b1b] mb-8">
-        PROJECTS
-      </h1>
+      <div className="w-full flex flex-col sm:relative sm:flex-row sm:justify-center sm:items-start mb-8 px-4 sm:px-6 lg:px-12">
+        <div className="flex items-center gap-2 mb-3 sm:mb-0 sm:absolute ml-10 sm:left-0 sm:top-0">
+          <button
+            type="button"
+            onClick={handlePrevPage}
+            disabled={!canGoPrev}
+            className={pagerButtonClasses(canGoPrev)}
+            aria-label="Previous projects"
+          >
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 20 20"
+              className="w-3 h-3 sm:w-3.5 sm:h-3.5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M12.5 4.5L7.5 10l5 5.5" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            onClick={handleNextPage}
+            disabled={!canGoNext}
+            className={pagerButtonClasses(canGoNext)}
+            aria-label="Next projects"
+          >
+        
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 20 20"
+              className="w-3 h-3 sm:w-3.5 sm:h-3.5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M7.5 4.5L12.5 10l-5 5.5" />
+            </svg>
+          </button>
+        </div>
+        <h1 className="text-3xl lg:text-4xl xl:text-6xl font-semibold tracking-widest text-[#1b1b1b]">
+          PROJECTS
+        </h1>
+      </div>
 
       {/* Projects Menu + Details */}
       <div className="relative z-10 w-full">
@@ -166,7 +275,7 @@ const Project = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -24 }}
                 transition={{ type: "spring", stiffness: 140, damping: 18 }}
-                className="relative border-2 border-white bg-[#1b1b1b] text-white shadow-2xl p-3 sm:p-4 max-w-[360px] lg:max-w-[300px] ml-0 sm:ml-auto"
+                className="relative border-2 border-white bg-[#1b1b1b] text-white shadow-2xl p-3 sm:p-4 max-w-[360px] lg:max-w-[500px] ml-0 sm:ml-auto"
               >
                 <button
                   type="button"
@@ -200,28 +309,25 @@ const Project = () => {
                 <p className="text-[12px] sm:text-sm lg:text-base leading-relaxed text-white/80">
                   {focusedProject.detail}
                 </p>
-                <button
-                  className="mt-3 inline-flex items-center gap-2 border border-white rounded-md px-2 py-1.5 text-[10px] sm:text-[11px] lg:text-xs font-semibold transition hover:bg-white hover:text-[#1b1b1b]"
-                  type="button"
-                >
-                  <span className="text-[11px] sm:text-[12px]">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 20 20"
-                      className="w-3.5 h-3.5"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M6 8V6a4 4 0 118 0v2m-9 4h10a1 1 0 011 1v5a1 1 0 01-1 1H5a1 1 0 01-1-1v-5a1 1 0 011-1zm5 3v2"
-                      />
-                    </svg>
-                  </span>
-                  CONTACT FOR DETAILS
-                </button>
+                {hasContactLink ? (
+                  <a
+                    className={contactButtonClasses}
+                    href={contactLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {contactButtonContent}
+                  </a>
+                ) : (
+                  <button
+                    className={`${contactButtonClasses} opacity-60 cursor-not-allowed hover:bg-transparent hover:text-white`}
+                    type="button"
+                    disabled
+                    aria-disabled="true"
+                  >
+                    {contactButtonContent}
+                  </button>
+                )}
               </motion.div>
             )}
           </AnimatePresence>

@@ -10,9 +10,9 @@ export default function Kaveen() {
           font-style: normal;
         }
       `}</style>
-      <div className="flex items-center justify-center text-center px-4 sm:px-6 md:px-10 pt-2 sm:pt-4 md:pt-6 lg:pt-8">
+      <div className="flex items-center justify-center text-center px-2 sm:px-6 md:px-10 pt-0 sm:pt-4 md:pt-6 lg:pt-8">
         <div
-          className="w-full text-[56px] sm:text-[110px] md:text-[220px] lg:text-[280px] xl:text-[320px] 2xl:text-[360px] leading-[0.9] tracking-tight text-black"
+          className="w-full text-[66px] sm:text-[110px] md:text-[220px] lg:text-[280px] xl:text-[320px] 2xl:text-[360px] leading-[0.9] tracking-tight text-black"
           style={{ fontFamily: 'Sans, sans-serif' }}
         >
           KAVEEN

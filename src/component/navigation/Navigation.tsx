@@ -75,12 +75,12 @@ function Navigation() {
   // Prevent body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflowY = 'hidden';
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflowY = '';
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflowY = '';
     };
   }, [isOpen]);
 
@@ -107,7 +107,7 @@ function Navigation() {
         aria-label="Main navigation"
       >
         <div className="max-w-screen mx-auto py-6">
-          <div className="flex items-center justify-end pr-8">
+          <div className="flex items-center justify-end pr-3 sm:pr-6 lg:pr-8">
             {/* Menu Button - Both Desktop & Mobile */}
             <button
               onClick={() => setIsOpen(!isOpen)}
